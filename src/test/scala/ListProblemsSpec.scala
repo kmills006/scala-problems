@@ -1,6 +1,6 @@
 import org.scalatest.flatspec.AnyFlatSpec
 
-import lists.{P01, P02, P03}
+import lists.{P01, P02, P03, P04}
 
 class ListProblemsSpec extends AnyFlatSpec {
   val fabFive: List[String] =
@@ -70,5 +70,35 @@ class ListProblemsSpec extends AnyFlatSpec {
     assertThrows[NoSuchElementException] {
       P03.findElementRecursive(-10, fabFive)
     }
+  }
+
+  "P04.length" should "return the length of the list." in {
+    val actual = P04.length(fabFive)
+    assert(actual == 5)
+  }
+
+  "P04.lengthRecursive" should "return the length of the list recursively." in {
+    val actual = P04.lengthRecursive(fabFive)
+    assert(actual == 5)
+  }
+
+  "P04.lengthRecursive" should "return 0 for an empty list." in {
+    val actual = P04.lengthRecursive(List())
+    assert(actual == 0)
+  }
+
+  "P04.lengthTailRecursive" should "return the length of the list recursively." in {
+    val actual = P04.lengthTailRecursive(fabFive)
+    assert(actual == 5)
+  }
+
+  "P04.lengthTailRecursive" should "return 0 for an empty list." in {
+    val actual = P04.lengthTailRecursive(List())
+    assert(actual == 0)
+  }
+
+  "P04.lengthFunctional" should "return 0 for an empty list." in {
+    val actual = P04.lengthFunctional(fabFive)
+    assert(actual == 5)
   }
 }

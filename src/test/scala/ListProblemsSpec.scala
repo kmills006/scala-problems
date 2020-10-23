@@ -1,6 +1,6 @@
 import org.scalatest.flatspec.AnyFlatSpec
 
-import lists.{P01, P02, P03, P04}
+import lists.{P01, P02, P03, P04, P05}
 
 class ListProblemsSpec extends AnyFlatSpec {
   val fabFive: List[String] =
@@ -100,5 +100,25 @@ class ListProblemsSpec extends AnyFlatSpec {
   "P04.lengthFunctional" should "return 0 for an empty list." in {
     val actual = P04.lengthFunctional(fabFive)
     assert(actual == 5)
+  }
+
+  "P05.reverseList" should "reverse the order of the list" in {
+    val actual = P05.reverseList(fabFive)
+    assert(actual == fabFive.reverse)
+  }
+
+  "P05.reverseRecursive" should "reverse the order of the list" in {
+    val actual = P05.reverseRecursive(fabFive)
+    assert(actual == fabFive.reverse)
+  }
+
+  "P05.reverseTailRecursive" should "reverse the order of the list" in {
+    val actual = P05.reverseTailRecursive(fabFive)
+    assert(actual == fabFive.reverse)
+  }
+
+  "P05.reverseFunctional" should "reverse the order of the list" in {
+    val actual = P05.reverseFunctional(fabFive)
+    assert(actual == fabFive.reverse)
   }
 }
